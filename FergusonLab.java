@@ -1,3 +1,6 @@
+// Assuming black voters vote for black candidates and white voters vote for 
+//white candidates, gets the result of elections of X black candidates, N white candidates,
+//and 3 different voting systems (Bloc, Cumulative, Limited)
 package ferguson;
 
 import java.util.ArrayList;
@@ -28,18 +31,26 @@ public class FergusonLab {
 		System.out.println(totWhite);
 		allTypes(numCandidates);
 	}
-	public static  void  allTypes (int numCandidates){
+	public static  void  allTypes (int numCandidates){ //begin the printing, and call the functions
 		for (int i = 0; i <= numCandidates; ++i){
 			System.out.println();
+			System.out.println();
+			System.out.println("________________________________");
+			System.out.println();
+			System.out.println();
+			
 			System.out.println("num of black candidates: " + i);
 			System.out.println("num of white candidates: " + (numCandidates-i));
 			System.out.println();
+			
 			System.out.println("for Bloc Voting: ");
 			bloc(i, numCandidates - i);
 			System.out.println();
+			
 			System.out.println("for limited voting: ");
 			limited(i, numCandidates -i);
 			System.out.println();
+			
 			System.out.println("for cumultative voting: ");
 			cumulative(i, numCandidates - i);
 		}
@@ -218,8 +229,7 @@ public class FergusonLab {
 					maxIndex = j;										
 				}
 			}
-			votes.set(maxIndex,  0)
-			;
+			votes.set(maxIndex, 0);
 			most.add(maxValue);
 			if (maxIndex < blackCandidates){
 				blackSeats++;
